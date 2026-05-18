@@ -1136,6 +1136,8 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ===== Responsive ===== */
+
+/* --- Tablet (max 1024px) --- */
 @media (max-width: 1024px) {
     .hero h1 { font-size: 2.6rem; }
     .solutions-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
@@ -1149,58 +1151,234 @@ a { text-decoration: none; color: inherit; }
     .value-visual { order: -1; }
 }
 
+/* --- Mobile (max 768px) --- */
 @media (max-width: 768px) {
+    /* Navbar */
+    .nav-container { height: 64px; }
     .nav-links {
         display: none;
         position: absolute;
-        top: 72px;
+        top: 64px;
         left: 0;
         right: 0;
         background: var(--card);
         flex-direction: column;
-        padding: 20px;
-        gap: 16px;
+        padding: 16px 24px;
+        gap: 4px;
         border-bottom: 1px solid var(--border);
         box-shadow: var(--shadow-md);
+    }
+    .nav-links a {
+        padding: 10px 0;
+        font-size: 0.95rem;
     }
     .nav-links.open { display: flex; }
     .nav-toggle { display: flex; }
 
-    .hero { padding: 110px 0 60px; }
+    /* Hero */
+    .hero { padding: 100px 0 48px; }
     .hero-container {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 32px;
     }
-    .hero h1 { font-size: 2.2rem; }
+    .hero h1 { font-size: 2rem; line-height: 1.2; }
+    .hero-description { font-size: 1rem; margin-bottom: 28px; }
     .hero-visual { display: none; }
-    .hero-actions { flex-direction: column; }
-    .hero-stats { flex-wrap: wrap; gap: 20px; }
+    .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .hero-actions .btn { width: 100%; }
+    .hero-stats {
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: flex-start;
+    }
+    .stat-number { font-size: 1.6rem; }
+    .stat-label { font-size: 0.78rem; }
+    .hero-badge { font-size: 0.75rem; margin-bottom: 16px; }
 
-    .section { padding: 70px 0; }
-    .section-header h2 { font-size: 1.8rem; }
+    /* Sections */
+    .section { padding: 56px 0; }
+    .section-header { margin-bottom: 40px; }
+    .section-header h2 { font-size: 1.65rem; }
+    .section-subtitle { font-size: 0.95rem; }
 
-    .problems-grid { grid-template-columns: 1fr; }
-    .features-grid { grid-template-columns: 1fr; }
-    .users-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
-    .team-grid { grid-template-columns: repeat(2, 1fr); }
-    .steps-grid { grid-template-columns: 1fr; }
-    .preview-grid { grid-template-columns: 1fr; }
+    /* Problem */
+    .problems-grid { grid-template-columns: 1fr; gap: 16px; }
+    .problem-card { padding: 24px; }
+    .problem-card h3 { font-size: 1.05rem; }
+    .problem-icon { width: 48px; height: 48px; border-radius: 12px; margin-bottom: 16px; }
 
-    .footer-content { grid-template-columns: 1fr; text-align: center; }
+    /* Solutions */
+    .solutions-grid { max-width: 100%; }
+    .solution-card { margin-bottom: 0; }
+    .solution-logo { padding: 24px 24px 0; }
+    .solution-tagline { padding: 6px 24px 0; }
+    .solution-desc { padding: 10px 24px 0; }
+    .solution-features { padding: 16px 24px 24px; }
+
+    /* Features */
+    .features-grid { grid-template-columns: 1fr; gap: 16px; }
+    .feature-card { padding: 24px; }
+    .feature-card h3 { font-size: 1rem; }
+    .feature-icon-wrap { width: 46px; height: 46px; margin-bottom: 14px; }
+
+    /* Steps */
+    .steps-grid { grid-template-columns: 1fr; gap: 28px; }
+    .step-card { text-align: left; padding: 0; display: flex; gap: 16px; align-items: flex-start; }
+    .step-number { font-size: 2.2rem; margin-bottom: 0; line-height: 1.2; min-width: 48px; }
+    .step-content h3 { font-size: 1.02rem; margin-bottom: 6px; }
+    .step-content p { font-size: 0.88rem; }
+
+    /* Users */
+    .users-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 100%; margin: 0; }
+    .user-card { padding: 24px 16px; }
+    .user-avatar { width: 56px; height: 56px; margin-bottom: 14px; }
+    .user-card h3 { font-size: 0.95rem; margin-bottom: 8px; }
+    .user-card p { font-size: 0.82rem; }
+
+    /* Value / Objectives */
+    .value-layout { gap: 36px; }
+    .value-content h2 { font-size: 1.65rem; }
+    .value-intro { font-size: 0.92rem; margin-bottom: 24px; }
+    .value-items { gap: 16px; }
+    .value-item h4 { font-size: 0.95rem; }
+    .value-item p { font-size: 0.84rem; }
+    .value-check { width: 28px; height: 28px; }
+    .value-graphic { width: 220px; height: 220px; }
+    .vg-outer { width: 220px; height: 220px; }
+    .vg-middle { width: 140px; height: 140px; }
+    .vg-inner { width: 70px; height: 70px; }
+    .vg-label { font-size: 0.75rem; padding: 5px 10px; }
+
+    /* Preview */
+    .preview-grid { grid-template-columns: 1fr; gap: 16px; }
+    .preview-main .window-content { min-height: 200px; }
+
+    /* Team */
+    .team-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .team-card { padding: 24px 16px; }
+    .team-avatar { width: 56px; height: 56px; margin-bottom: 12px; }
+    .team-card h3 { font-size: 0.88rem; margin-bottom: 10px; }
+    .team-links { gap: 8px; }
+    .team-links a { width: 32px; height: 32px; }
+
+    /* CTA */
+    .cta-section { padding: 56px 0; }
+    .cta-content h2 { font-size: 1.6rem; }
+    .cta-content p { font-size: 0.95rem; margin-bottom: 24px; }
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    .cta-actions .btn { width: 100%; max-width: 320px; }
+
+    /* Footer */
+    .footer { padding: 40px 0 0; }
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 28px;
+        padding-bottom: 28px;
+    }
     .footer-brand p { max-width: 100%; }
     .footer-logo { justify-content: center; }
+    .footer-links h4 { margin-bottom: 10px; }
+    .footer-links a { padding: 4px 0; }
 
-    .cta-content h2 { font-size: 1.8rem; }
-    .cta-actions { flex-direction: column; align-items: center; }
+    /* Footer team */
+    .footer-team { padding: 20px 0; }
+    .footer-team-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .footer-team-member { gap: 8px; }
+    .footer-team-name { font-size: 0.8rem; }
 
-    .value-graphic { width: 240px; height: 240px; }
-    .vg-outer { width: 240px; height: 240px; }
-    .vg-middle { width: 150px; height: 150px; }
-    .vg-inner { width: 76px; height: 76px; }
+    .footer-bottom { padding: 16px 0; }
 }
 
+/* --- Small phone (max 480px) --- */
 @media (max-width: 480px) {
     .container { padding: 0 16px; }
-    .hero h1 { font-size: 1.85rem; }
-    .btn { padding: 12px 22px; font-size: 0.9rem; }
+
+    /* Hero */
+    .hero { padding: 88px 0 40px; }
+    .hero h1 { font-size: 1.7rem; }
+    .hero-description { font-size: 0.92rem; line-height: 1.65; margin-bottom: 24px; }
+    .hero-badge { font-size: 0.72rem; padding: 5px 12px; }
+    .btn { padding: 12px 20px; font-size: 0.88rem; }
+    .hero-stats { gap: 12px; }
+    .stat-number { font-size: 1.4rem; }
+    .stat-divider { height: 32px; }
+
+    /* Sections */
+    .section { padding: 44px 0; }
+    .section-header { margin-bottom: 32px; }
+    .section-header h2 { font-size: 1.45rem; }
+    .section-subtitle { font-size: 0.88rem; }
+    .section-tag { font-size: 0.72rem; padding: 3px 10px; }
+
+    /* Cards */
+    .problem-card { padding: 20px; }
+    .problem-card h3 { font-size: 1rem; }
+    .problem-card p { font-size: 0.85rem; }
+    .problem-icon { width: 44px; height: 44px; margin-bottom: 14px; }
+
+    .solution-logo { padding: 20px 20px 0; }
+    .solution-logo h3 { font-size: 1.15rem; }
+    .solution-tagline { padding: 4px 20px 0; font-size: 0.78rem; }
+    .solution-desc { padding: 8px 20px 0; font-size: 0.85rem; }
+    .solution-features { padding: 14px 20px 20px; }
+    .solution-features li { font-size: 0.82rem; padding: 5px 0; }
+
+    .feature-card { padding: 20px; }
+    .feature-card h3 { font-size: 0.95rem; }
+    .feature-card p { font-size: 0.84rem; }
+    .feature-icon-wrap { width: 42px; height: 42px; border-radius: 10px; margin-bottom: 12px; }
+
+    /* Steps horizontal layout tweaks */
+    .step-number { font-size: 1.8rem; min-width: 40px; }
+    .step-content h3 { font-size: 0.95rem; }
+    .step-content p { font-size: 0.84rem; }
+
+    /* Users — single column on very small */
+    .users-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
+    .user-card { padding: 24px 20px; }
+
+    /* Value */
+    .value-content h2 { font-size: 1.45rem; }
+    .value-intro { font-size: 0.88rem; }
+    .value-graphic { width: 180px; height: 180px; }
+    .vg-outer { width: 180px; height: 180px; }
+    .vg-middle { width: 112px; height: 112px; }
+    .vg-inner { width: 56px; height: 56px; }
+    .vg-label { font-size: 0.7rem; padding: 4px 8px; }
+    .vg-label-2 { left: -8px; bottom: 20px; }
+    .vg-label-3 { right: -8px; bottom: 20px; }
+
+    /* Team — single column on very small */
+    .team-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
+    .team-card { padding: 24px 20px; }
+    .team-avatar { width: 52px; height: 52px; margin-bottom: 10px; }
+    .team-card h3 { font-size: 0.85rem; }
+    .team-links a { width: 30px; height: 30px; }
+
+    /* CTA */
+    .cta-section { padding: 44px 0; }
+    .cta-content h2 { font-size: 1.4rem; }
+    .cta-content p { font-size: 0.88rem; }
+
+    /* Footer */
+    .footer { padding: 32px 0 0; }
+    .footer-content { gap: 24px; padding-bottom: 24px; }
+    .footer-logo { font-size: 1.05rem; }
+    .footer-brand p { font-size: 0.82rem; }
+    .footer-links h4 { font-size: 0.78rem; margin-bottom: 8px; }
+    .footer-links a { font-size: 0.82rem; }
+    .footer-team-name { font-size: 0.76rem; }
+    .footer-bottom p { font-size: 0.75rem; }
 }
